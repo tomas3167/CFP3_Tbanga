@@ -12,6 +12,7 @@ print (f"{promedio}")
 # Comandos: con alt + ctrl y la flecha para abajo o arriba hace que cuando escribo algo se escribe en todos los lados
 # Comandos: con shift + alt y alguna flecha copio y pego la línea
 # Comandos: Alt + z para que el texto baje
+# Comandos: Ctrl y + o Ctrl y - para hacer zoom
 
 nombre = "tomas"
 existe = False
