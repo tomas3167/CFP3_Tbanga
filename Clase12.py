@@ -46,7 +46,36 @@
  #print(juegos)
 
 # Funcion POP -->> para eliminar un elemento
-juegos = ["Mario Bross","COD","NBA2K"]
-print(juegos)
-juegos.pop() #Si no pongo nada por defecto elimina el último elemento
-print(juegos)
+ #juegos = ["Mario Bross","COD","NBA2K"]
+ #print(juegos)
+ #juegos.pop() #Si no pongo nada por defecto elimina el último elemento
+ #print(juegos)
+
+# Funcion INDEX -->> para buscar un elemento que le indiquemos y nos devuelve en que posicion se      encuentra
+ #numeros = [1,6,-3,22,-5,6,19,-7,9]
+ #print (numeros.index(22))
+
+# Ejercicio listas
+lista1 = [1,12,123]
+lista2 = ["Bye","Ciao","Agur","Adieu"]
+# 1
+lista1.append (1234)
+lista1.append ("Hola")
+# 2
+# lista2.append ("Adios")
+# lista2.append (1234)
+lista2[4:] = ["Adios",1234] #Se puede hacer de las 2 formas
+print (f"Lista 1 actualizada {lista1}" )
+print (f"Lista 2 actualizada {lista2}")
+# 3
+lista3 = lista1
+lista3.pop(-1)
+print (f"lista 3 {lista3}")
+# 4
+lista4 = lista2
+lista4.pop(0)
+lista4.pop(-1)
+print (f"lista 4 {lista4}")
+# 5
+lista5 = lista4 + lista3
+print(f"lista 5 {lista5}")

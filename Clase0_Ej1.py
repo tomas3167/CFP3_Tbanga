@@ -30,3 +30,6 @@ print (type(numDecimal))
 # bool = boleano, True o False siempre con mayúsculas
 # int = número entero
 # float = númedo decimal
+
+# false es igual a 0
+# true es igual a 1
