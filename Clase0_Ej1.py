@@ -33,3 +33,11 @@ print (type(numDecimal))
 
 # false es igual a 0
 # true es igual a 1
+
+# != es distinto
+
+# BREAK: sirve para romper la condicion y finalizar el bucle. Siempre se pone adentro de una estructura con una condicion, (ej: if, while, etc)
+
+# PASS: Se utiliza comunmente en bloques de codigo que aun no se han implementado o en funciones que aun no tienen contenido
+
+# CONTINUE: Sirve para omitir una iteracion y continuar con la siguente, si se cumple una condicion determinada.
