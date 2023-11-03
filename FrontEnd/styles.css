@@ -1,0 +1,9 @@
+body {
+    background-color: brown;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+form {
+    background-color: rgb(63, 96, 206);
+    width: 600px;
+}
