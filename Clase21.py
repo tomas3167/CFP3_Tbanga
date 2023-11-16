@@ -81,15 +81,17 @@
 
  #DESEMPAQUETADO: para guardar en una variable cada division
 numeros = (1,2,3,4,5,6,7)
-uno = numeros[0]
-dos = numeros[1]
-tres = numeros[2]
-cuatro = numeros[3]
+# uno = numeros[0]
+# dos = numeros[1]
+# tres = numeros[2]
+# cuatro = numeros[3]
+uno, dos, tres, cuatro, *resto = numeros
 
 print(uno)
 print(dos)
 print(tres)
 print(cuatro)
+print(resto)
 
 uno, dos, tres, cuatro, *resto = numeros # --- *resto es el resto de numeros que no los guarde (5,6,7)
 uno, dos, tres, cuatro, *_ = numeros # --- *_ omite el resto de elementos
