@@ -33,8 +33,8 @@ while True: # -- Si pongo True siempre va a ser infinito
     pygame.draw.line(window, (255, 255, 255) , (center_x -50, center_y ) , (center_x +50, center_y ) , 2)
     pygame.draw.line(window, (255, 255, 255) , (center_x -40, center_y -40) , (center_x +40, center_y +40) , 2)
     pygame.draw.line(window, (255, 255, 255) , (center_x -40, center_y +40) , (center_x +40, center_y -40) , 2)
-    pygame.draw.line(window, (255, 255, 255) , (center_x -50, center_y +20) , (center_x +50, center_y -20) , 2)
-    pygame.draw.line(window, (255, 255, 255) , (center_x -50, center_y -20) , (center_x +50, center_y +20) , 2)
+    # pygame.draw.line(window, (255, 255, 255) , (center_x -50, center_y +20) , (center_x +50, center_y -20) , 2)
+    # pygame.draw.line(window, (255, 255, 255) , (center_x -50, center_y -20) , (center_x +50, center_y +20) , 2)
 
     pygame.display.flip()
 
