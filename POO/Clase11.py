@@ -101,30 +101,91 @@ class Personaje():
         print(f"I: {self.inteligencia} ")
         print(f"D: {self.defensa} ")
         print(f"V: {self.vida} ")
-    def vivo(self):
-        return self.vida > 0
+    def vida(self):
+        if self.vida < 0:
+            return "muerto"
+        else:
+            return f"La vida del personaje {self.nombre} es {self.vida}"
     def esta_vivo(self):
         if self.vida > 0:
-            print(f"El personaje sigue vivo con {self.vida} de vida")
+            print(f"El personaje {self.nombre} sigue vivo con {self.vida} de vida")
         else:
-            print("El personaje esta muerto")
+            print(f"El personaje {self.nombre} esta muerto")
     def daño(self,enemigo):
         return self.fuerza - enemigo.defensa
-        #print(f"El daño que causa {self.nombre} es {self.fuerza - enemigo.defensa} al rival {enemigo.nombre}")
     def atacar(self,enemigo):
         daño = self.daño(enemigo)
         enemigo.vida = enemigo.vida - daño
         print(f"{self.nombre} le causo {daño} de daño a {enemigo.nombre}")
-        if enemigo.vivo():
+        if enemigo.vida > 0:
             print(f"La vida de {enemigo.nombre} es de {enemigo.vida} ")
         else:
-            print(f"El enemigo {enemigo.nombre} esta {enemigo.esta_vivo()}")
-pj_1 = Personaje("Tomas",200,100,80,150)
-pj_1.atributos()
-pj_1.subir_nivel(20,50,40,15)
-pj_1.esta_vivo()
-pj_2 = Personaje("Milagros",300,150,40,100)
-print("\n")
-pj_2.atributos()
-pj_1.daño(pj_2)
-pj_1.atacar(pj_2)
+            print(f"El enemigo {enemigo.nombre} esta muerto")
+# pj_1 = Personaje("Tomas",200,100,80,150)
+# pj_1.atributos()
+# pj_1.subir_nivel(20,50,40,15)
+# pj_1.esta_vivo()
+# pj_2 = Personaje("Milagros",300,150,40,200)
+# print("\n")
+# pj_2.atributos()
+# pj_1.atacar(pj_2)
+# pj_2.esta_vivo()
+# print(f"El daño que causa el personaje {pj_1.nombre} a {pj_2.nombre} es de  {pj_1.daño(pj_2)}")
+class Guerrero(Personaje):
+    def __init__(self, nombre, fuerza, inteligencia, defensa, vida,arma=""):
+        super().__init__(nombre, fuerza, inteligencia, defensa, vida)
+        self.arma = arma
+    def elegir_arma(self):
+        opcion = int(input("1 = Daga (20 daño)\n2 = Espada (50 daño)\n"))
+        if opcion == 1:
+            self.arma = 20
+            return (f"Fuerza actual: {self.fuerza + self.arma}")
+        else:
+            self.arma = 50
+            return (f"Fuerza actual: {self.fuerza + self.arma}")
+    def mostrar_arma(self):
+        if self.arma == 20:
+            return(f"Arma actual: Daga {self.arma} de daño")
+        else:
+            return(f"Arma actual: Espada {self.arma} de daño")
+    def daño(self,enemigo):
+        return self.fuerza + self.arma - enemigo.defensa
+
+class Mago(Personaje):
+    def __init__(self, nombre, fuerza, inteligencia, defensa, vida, hechizo=""):
+        super().__init__(nombre, fuerza, inteligencia, defensa, vida)
+        self.hechizo = hechizo
+    def elegir_hechizo(self):
+        opcion = int(input("1 = Rayo (40 daño)\n2 = Fuego (90 daño)\n3 = Curacion (200 vida)"))
+        if opcion == 1:
+            self.hechizo = 40
+            return (f"Fuerza actual: {self.fuerza + self.hechizo}")
+        elif opcion == 2:
+            self.hechizo = 90
+            return (f"Fuerza actual: {self.fuerza + self.hechizo}")
+        else:
+            self.hechizo = 200
+            return (f"Vida actual: {self.vida + self.hechizo}")
+    def mostrar_hechizo(self):
+        if self.hechizo == 40:
+            return (f"Hechizo actual: Rayo ({self.hechizo} de daño)")
+        elif self.hechizo == 90:
+            return (f"Hechizo actual: Fuego ({self.hechizo} de daño)")
+        else:
+            return (f"Hechizo actual: Curacion ({self.hechizo} de vida)")
+    def daño(self,enemigo):
+        return self.fuerza + self.hechizo - enemigo.defensa
+
+        
+pj_3 = Guerrero("Wallace",100,50,80,150)
+pj_3.atributos()
+print(pj_3.elegir_arma())
+print(pj_3.mostrar_arma())
+print("-----------\n")
+
+pj_4 = Mago("Gandalf",50,200,40,120)
+pj_4.atributos()
+print(pj_4.elegir_hechizo())
+print(pj_4.mostrar_hechizo())
+print(pj_4.daño(pj_3))
+pj_3.atacar(pj_4)
