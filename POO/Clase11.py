@@ -107,10 +107,11 @@ class Personaje():
         else:
             return f"La vida del personaje {self.nombre} es {self.vida}"
     def esta_vivo(self):
-        if self.vida > 0:
-            print(f"El personaje {self.nombre} sigue vivo con {self.vida} de vida")
-        else:
-            print(f"El personaje {self.nombre} esta muerto")
+        return self.vida > 0
+        # if self.vida > 0:
+        #     print(f"El personaje {self.nombre} sigue vivo con {self.vida} de vida")
+        # else:
+        #     print(f"El personaje {self.nombre} esta muerto")
     def daño(self,enemigo):
         return self.fuerza - enemigo.defensa
     def atacar(self,enemigo):
@@ -121,6 +122,7 @@ class Personaje():
             print(f"La vida de {enemigo.nombre} es de {enemigo.vida} ")
         else:
             print(f"El enemigo {enemigo.nombre} esta muerto")
+
 # pj_1 = Personaje("Tomas",200,100,80,150)
 # pj_1.atributos()
 # pj_1.subir_nivel(20,50,40,15)
@@ -139,18 +141,17 @@ class Guerrero(Personaje):
         opcion = int(input("1 = Daga (20 daño)\n2 = Espada (50 daño)\n"))
         if opcion == 1:
             self.arma = 20
-            return (f"Fuerza actual: {self.fuerza + self.arma}")
+            self.fuerza += self.arma
+            return (f"Fuerza actual: {self.fuerza}")
         else:
             self.arma = 50
-            return (f"Fuerza actual: {self.fuerza + self.arma}")
+            self.fuerza += self.arma
+            return (f"Fuerza actual: {self.fuerza}")
     def mostrar_arma(self):
         if self.arma == 20:
             return(f"Arma actual: Daga {self.arma} de daño")
         else:
             return(f"Arma actual: Espada {self.arma} de daño")
-    def daño(self,enemigo):
-        return self.fuerza + self.arma - enemigo.defensa
-
 class Mago(Personaje):
     def __init__(self, nombre, fuerza, inteligencia, defensa, vida, hechizo=""):
         super().__init__(nombre, fuerza, inteligencia, defensa, vida)
@@ -159,13 +160,16 @@ class Mago(Personaje):
         opcion = int(input("1 = Rayo (40 daño)\n2 = Fuego (90 daño)\n3 = Curacion (200 vida)"))
         if opcion == 1:
             self.hechizo = 40
-            return (f"Fuerza actual: {self.fuerza + self.hechizo}")
+            self.fuerza += self.hechizo
+            return (f"Fuerza actual: {self.fuerza}")
         elif opcion == 2:
             self.hechizo = 90
-            return (f"Fuerza actual: {self.fuerza + self.hechizo}")
+            self.fuerza += self.hechizo
+            return (f"Fuerza actual: {self.fuerza}")
         else:
             self.hechizo = 200
-            return (f"Vida actual: {self.vida + self.hechizo}")
+            self.vida += self.hechizo
+            return (f"Vida actual: {self.vida}")
     def mostrar_hechizo(self):
         if self.hechizo == 40:
             return (f"Hechizo actual: Rayo ({self.hechizo} de daño)")
@@ -173,19 +177,35 @@ class Mago(Personaje):
             return (f"Hechizo actual: Fuego ({self.hechizo} de daño)")
         else:
             return (f"Hechizo actual: Curacion ({self.hechizo} de vida)")
-    def daño(self,enemigo):
-        return self.fuerza + self.hechizo - enemigo.defensa
 
         
-pj_3 = Guerrero("Wallace",100,50,80,150)
-pj_3.atributos()
-print(pj_3.elegir_arma())
-print(pj_3.mostrar_arma())
-print("-----------\n")
+tomas = Guerrero("Tomas",125,120,120,900)
+tomas.atributos()
+# print(pj_3.elegir_arma())
+# print(pj_3.mostrar_arma())
+# pj_3.atributos()
+# print("-----------\n")
+milagros = Mago("Milagros",150,200,115,500)
+milagros.atributos()
+# print(pj_4.elegir_hechizo())
+# print(pj_4.mostrar_hechizo())
+# print(pj_4.daño(pj_3))
+# pj_4.atributos()
+# pj_3.atacar(pj_4)
 
-pj_4 = Mago("Gandalf",50,200,40,120)
-pj_4.atributos()
-print(pj_4.elegir_hechizo())
-print(pj_4.mostrar_hechizo())
-print(pj_4.daño(pj_3))
-pj_3.atacar(pj_4)
+def combate(jugador_1,jugador_2):
+    turno = 1
+    while jugador_1.esta_vivo() and jugador_2.esta_vivo():
+        print(f"\n Turno: {turno}")
+        print(f"Accion de {jugador_1.nombre}")
+        jugador_1.atacar(jugador_2)
+        print(f"Accion de {jugador_2.nombre}")
+        jugador_2.atacar(jugador_1)
+        turno += 1
+    if jugador_1.esta_vivo():
+        print(f"\n {jugador_1.nombre} ha ganado")
+    elif jugador_2.esta_vivo():
+        print(f"\n {jugador_2.nombre} ha ganado")
+    else:
+        print("\n Fue una dura pelea que termino en empate")
+combate(tomas,milagros)
