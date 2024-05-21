@@ -25,5 +25,5 @@ def descargar_video(url, carpeta):
     for stream in streams:
         print(stream.resolution)
 
-#C:\Users\admin\Downloads\Videos --- Hay que cambiar las barras invertidas (\) por las /
+#C:\Users\admin\Downloads\Videos --- Hay que cambiar las barras invertidas \ por las /
 descargar_video("https://www.youtube.com/watch?v=nNkw3Fo9Aqk","C:/Users/admin/Downloads/Videos")
