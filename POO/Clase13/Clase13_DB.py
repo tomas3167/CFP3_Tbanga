@@ -44,3 +44,6 @@ def validar_usuario(usuario, contraseña):
  # Crear la tabla (Ejecuta la funcion crear_tabla)
 crear_tabla()
 insertar_usuarios("lopez","1111")
+insertar_usuarios("tomas","1234")
+insertar_usuarios("pepito","102030")
+insertar_usuarios("messi","10")

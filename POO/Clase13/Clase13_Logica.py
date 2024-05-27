@@ -1,6 +1,6 @@
 # Funcion para validar usuario
 from Clase13_DB import validar_usuario
-def validar_usuario(usuario, contraseña):
+def validar_usuario_login(usuario, contraseña): # Importante que la funcion no se llame igual
     return validar_usuario(usuario,contraseña)
 
     # Diccionario con los usuarios para simular una base de datos
