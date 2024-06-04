@@ -29,14 +29,16 @@ def insertar():
     obtener_productos()
 
 def eliminarProductos():
-    try: 
+    try: #---- Esto es para que algunos errores concretos sean excepciones para que la funcion siga
         grilla.item(grilla.selection())
     except IndexError:
         messagebox.showerror("Error","Debe seleccionar un producto")
-    item = grilla.item(grilla.selection()) 
-    producto = item['text'] 
+    item = grilla.item(grilla.selection()) # -- Es para que se seleccione con el clic del mouse
+    producto = item['text'] # -- Esto hace que solo se seleccione la parte del texto sino no funciona
     eliminar(producto)
     obtener_productos()
+
+
 
 def modificar_productos():
     try:
