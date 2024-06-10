@@ -7,7 +7,7 @@ def conectar(query, parameters=()):
         conn.commit() 
     return resultado
 
-def obtener_productos():
+def obtener_producto():
     query = 'SELECT * FROM productos ORDER BY ID DESC'
     db_rows = conectar(query)
     return db_rows

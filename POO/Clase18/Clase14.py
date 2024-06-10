@@ -4,7 +4,7 @@ from tkinter import messagebox
 from Clase14_DB import *
 from Clase14_DB import insertar_producto
 from Clase14_DB import eliminar
-from Clase14_DB import obtener_productos
+from Clase14_DB import obtener_producto
 from Clase14_DB import modificar
 
 # Validar que los datos no esten vacios
@@ -37,7 +37,6 @@ def eliminarProductos():
     producto = item['text'] # -- Esto hace que solo se seleccione la parte del texto sino no funciona
     eliminar(producto)
     obtener_productos()
-
 
 
 def modificar_productos():
@@ -73,20 +72,20 @@ def modificar_productos():
     Button(ventana_editar, text="Actualizar", command=lambda:actualizar(producto_nuevo.get(),stock_nuevo.get(),producto,stock)).grid(row=4,column=2,sticky=W)
 
     def actualizar(producto_nuevo,stock_nuevo,producto,stock):
-        from Clase14_DB import modificar, obtener_productos
+        from Clase14_DB import modificar, obtener_producto
         modificar(producto_nuevo,stock_nuevo,producto,stock)
         ventana_editar.destroy()
         obtener_productos()
     obtener_productos()
 
 def obtener_productos():
-    from Clase14_DB import modificar, obtener_productos
+    from Clase14_DB import modificar, obtener_producto
     grabados = grilla.get_children()  # -- get_children para obtener todas las filas actuales de mi tabla
     for elemento in grabados:
         grilla.delete(elemento)
     # Consulto los datos
     # Llamar a la funcion obtener_productos para obtener todos los productos de la base de datos
-    productos = obtener_productos()
+    productos = obtener_producto()
     for row in productos:
         grilla.insert('',0,text=row[1],values=(row[2],row[3],row[4]))
 
