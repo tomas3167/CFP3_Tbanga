@@ -4,7 +4,7 @@
 
  # 2- Setter: Son un metodo que se utiliza para modificar el valor de un atributo privado desde fuera de la clase. Permite controlar y validar los cambios que se realizan en el atributo. En Python, los setters suelen nombrarse con el prefijo set_nombre
 
- # __ (doble guion bajo): El uso del doble guion bajo indica que ese atributo es privado y no debe ser accedido directamente desde fuera de la clase. Esta convención ayuda a encapsular y proteger los datos y métodos internos de la clase. Python implementa el "name mangling" (mangling de nombres) para estos atributos, lo que significa que renombra el atributo de forma interna para que sea difícil acceder a él desde fuera de la clase.
+ # 3- __ (doble guion bajo): El uso del doble guion bajo indica que ese atributo es privado y no debe ser accedido directamente desde fuera de la clase. Esta convención ayuda a encapsular y proteger los datos y métodos internos de la clase. Python implementa el "name mangling" (mangling de nombres) para estos atributos, lo que significa que renombra el atributo de forma interna para que sea difícil acceder a él desde fuera de la clase.
 
 class Usuario:
     def __init__(self,nombre, edad, email, contraseña):
