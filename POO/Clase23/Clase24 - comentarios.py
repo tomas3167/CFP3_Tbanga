@@ -9,4 +9,6 @@
 # para poner comentarios en html seleccionas la linea y vas a edit y clickeas en toggle line comment
 # <!-- si ponemos {% %} podemos escribir en lenguaje python en un archivo html -->
 
-bootstrap es un framework para usar partes de una pagina html
+# bootstrap es un framework para usar partes de una pagina html
+# para importarlo en el html copiamos los estilos css <link href=etc..> donde dice 2. Include Bootstrap’s CSS and JS.
+# luego los scripts justo abajo de eso
