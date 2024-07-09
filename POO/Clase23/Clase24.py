@@ -5,4 +5,4 @@
 # La carpeta 'templates' hay que crearla manualmente dentro del proyecto, porque python esta diseñado para
 # backend por eso no la crea automaticamente
 # para crear automaticamente el codigo basico en html hay que poner !
-
+# <!-- si ponemos {% %} podemos escribir en lenguaje python en un archivo html -->
