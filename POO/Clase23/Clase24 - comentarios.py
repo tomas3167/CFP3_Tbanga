@@ -9,6 +9,14 @@
 # para poner comentarios en html seleccionas la linea y vas a edit y clickeas en toggle line comment
 # <!-- si ponemos {% %} podemos escribir en lenguaje python en un archivo html -->
 
+ # -- todos los comandos se hacen el manage.py desde el cmd, siempre es "python manage.py 'comando' "
+# makemigrations: busca si hay nuevos cambios
+# migrate: guarda esos cambios
+# como el git push y git commit
+# python manage.py runserver para iniciar el server, luego entramos a la url del server, ej: http://127.0.0.1:8000/ y le agregamos admin despues de la /.
+# para entrar como admin hay que crear un usuario y contraseña. ponemos python manage.py createsuperuser y lo creamos. si le damos enter sin poner nada en el mail no lo pide despues
+# para cambiar el lenguaje vamos a settings.py en LANGUAGE_CODE = 'es-arg'
+
 # bootstrap es un framework para usar partes de una pagina html
 # para importarlo en el html copiamos los estilos css <link href=etc..> donde dice 2. Include Bootstrap’s CSS and JS.
 # arriba del <title>
