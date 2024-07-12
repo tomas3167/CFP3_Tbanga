@@ -18,6 +18,7 @@
 # para cambiar el lenguaje vamos a settings.py en LANGUAGE_CODE = 'es-arg'
 
 # bootstrap es un framework para usar partes de una pagina html
-# para importarlo en el html copiamos los estilos css <link href=etc..> donde dice 2. Include Bootstrap’s CSS and JS.
-# arriba del <title>
-# luego los scripts que estan justo abajo de eso y lo pegamos adentro del body al final
+# para importarlo en el html vamos a introduction en bootstrap y copiamos los estilos css <link href=etc..> donde
+# dice 2. Include Bootstrap’s CSS and JS.
+# y lo pegamos arriba del <title>
+# luego los dos scripts que estan justo abajo de "2. Include...etc" y lo pegamos adentro del body al final
